@@ -1,28 +1,51 @@
 import React, { Component } from 'react';
+import MeatballList from './MeatballList';
+
 class Meatballs extends Component {
- constructor(props) {
-   this.state = {
-     items: ['Home >','Tabletop & Bar >','Serveware >','Snacks & Condiment Serveware']
-   };
-   this.state.filteredItems = this.state.items.filter((item, index) => {
-     if(index === this.state.items.length - 1 || index === this.state.items.length - 2) {
-       <li key={index}>{item}</li>
-     }
-   });
- }
+
+  constructor(...args) {
+   this.setCategories = this.setCategories.bind(this);
+    this.state = {
+      meatballArr: args[0].meatballArr.filter((item, index) => {
+        if (index === 0 || index >= args[0].meatballArr.length - 2) {
+          return item
+        }
+      })
+    }
+  }
+
+  setCategories(val) {
+    console.log(val)
+    if(val) {
+      this.setState({meatballArr: this.props.meatballArr});
+    } else {
+        this.setState({
+          meatballArr: this.props.meatballArr.filter((item, index) => {
+          if (index === 0 || index >= this.props.meatballArr.length - 2) {
+            return item
+          }
+        })
+      })
+    }
+  }
+ 
  render() {
-   return (
-     <div>
-       <h3 className='meatball-header'>Meatballs</h3>
-       <div>
-         <nav className="breadcrumb-container">
-           <ol className="breadcrumbs">
-             <li className="items">{this.state.filteredItems}</li>
-           </ol>
-         </nav>
-       </div>
-     </div>
-   )
+
+    return (
+      <div>
+        <h3 className='meatball-header'>Meatballs</h3>
+        <div>
+          <nav className="meatball-container">
+            <ol className="meatball-list">
+              {this.state.meatballArr.map((item, index) => 
+                <MeatballList cats={item} key={index} onListClick={this.setCategories}/>
+              )}
+            </ol>
+          </nav>
+        </div>
+      </div>
+    )
  }
 };
+
 export default Meatballs;
