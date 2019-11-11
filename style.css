@@ -1,0 +1,47 @@
+body {
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ text-transform: capitalize;
+}
+.breadcrumbs {
+   list-style: none;
+}
+.breadcrumb-container::-webkit-scrollbar {
+ width: 0;
+ display: none;
+}
+.items {
+ padding-right: 5px;
+ display: inline-block;
+ text-transform: capitalize;
+}
+h2 {
+ text-align: center;
+}
+@media screen and (max-width: 769px){
+ .breadcrumb-container {
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 12px;
+   overflow: auto;
+   white-space: nowrap;
+   display: flex;
+   text-align: right;
+   flex-wrap: nowrap;
+   padding: 0 10px;
+   flex-direction: row-reverse;
+ }
+ .breadcrumbs {
+   padding: 0 10px;
+ }
+}
+@media screen and (min-width: 769px){
+ .breadcrumb-container {
+   float: left;
+   display: block;
+ }
+ .breadcrumbs {
+   padding: 0 10px;
+ }
+}
+.subtitle-container {
+ clear: both
+}
