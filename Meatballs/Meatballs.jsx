@@ -19,7 +19,8 @@ class Meatballs extends Component {
         "https://www.cook2eatwell.com/wp-content/uploads/2018/05/Italian-Sausage-Meatball-Subs.jpg"
       ],
       count: 0,
-      meatballPic: ""
+      meatballPic: "",
+      hidePicClass: 'hide'
     };
   }
 
@@ -47,14 +48,13 @@ class Meatballs extends Component {
       let rando = Math.floor(
         Math.random() * Math.floor(this.state.meatballArr.length)
       );
-
+      this.setState({hidePicClass: ''});
       rando =
         this.state.meatballPic === this.state.meatballArr[rando]
           ? Math.abs(this.state.meatballArr.length - 1 - rando -1)
           : rando;
       
       this.state.meatballPic = this.state.meatballPicArray[rando];
-      console.log(this.state.meatballPic);
     }
   }
 
@@ -75,7 +75,7 @@ class Meatballs extends Component {
             </ol>
           </nav>
         </div>
-        <img className="sub-pic" src={this.state.meatballPic} />
+        <img className={'sub-pic ' + this.state.hidePicClass } src={this.state.meatballPic} />
       </div>
     );
   }

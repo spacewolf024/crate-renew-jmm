@@ -69,18 +69,18 @@ class App extends Component {
             meatballArr={this.state.meatballArr}
           />
         </div>
-        <div className="subtitle-contatiner">
+        <div className="subtitle-container">
           <Meatballv2
             meatballArr={this.state.meatballArr2}
             onSubClick={this.clickHandler}
           />
         </div>
-        <div className="subtitle-contatiner">
+        <div className="subtitle-container">
           <Meatballv3
             meatballArr={this.state.items}
           />
         </div>
-        <div className="subtitle-contatiner">
+        <div className="subtitle-container">
           <Meatballv4
             meatballArr={this.state.items}
             
