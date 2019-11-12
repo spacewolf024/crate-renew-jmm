@@ -17,6 +17,18 @@ body {
  text-transform: capitalize;
 }
 
+/* .items:after {
+  content: " >"
+} */
+
+:after {
+  content: '';
+}
+
+.items:last-child::after {
+  content: '';
+}
+
 h2 {
  text-align: center;
 }
