@@ -58,7 +58,7 @@ class Meatballs extends Component {
   render() {
     return (
       <div>
-        <h3 className="meatball-header">Meatball Sub</h3>
+        <h3 className="meatball-header">Meatball Sub V1</h3>
         <div>
           <nav className={"meatball-container " + this.state.rowClass}>
             <ol className="meatball-list">
