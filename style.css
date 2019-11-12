@@ -29,6 +29,10 @@ h2 {
  padding-top: 10px;
 }
 
+.items:last-child {
+  font-weight: bold;
+}
+
 .meatballs {
     color: #616161;
     width: 24px;

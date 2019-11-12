@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Meatballs from './Meatballs';
 import Meatballv2 from './MeatballV2';
+import Meatballv3 from './MeatballV3';
 import SliderList from './SliderList';
 import './style.css';
 
@@ -48,6 +49,9 @@ clickHandler = (val) => {
          </div>
          <div className='subtitle-contatiner'>
           <Meatballv2 meatballArr={this.state.meatballArr2} onSubClick={this.clickHandler} />
+         </div>
+         <div className='subtitle-contatiner'>
+          <Meatballv3 meatballArr={this.state.items} onSubClick={this.clickHandler} />
          </div>
      </div>
    );
