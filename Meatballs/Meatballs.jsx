@@ -25,7 +25,7 @@ class Meatballs extends Component {
 
   setCategories(val) {
     this.state.count++;
-    this.props.onSubClick(false);
+    // this.props.onSubClick(false);
 
     if (val) {
       this.setState({
@@ -47,11 +47,14 @@ class Meatballs extends Component {
       let rando = Math.floor(
         Math.random() * Math.floor(this.state.meatballArr.length)
       );
+
       rando =
         this.state.meatballPic === this.state.meatballArr[rando]
-          ? Math.abs(this.state.meatballArr.length - 1 - rando)
+          ? Math.abs(this.state.meatballArr.length - 1 - rando -1)
           : rando;
+      
       this.state.meatballPic = this.state.meatballPicArray[rando];
+      console.log(this.state.meatballPic);
     }
   }
 

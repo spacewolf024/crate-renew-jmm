@@ -25,7 +25,7 @@ class MeatballV4 extends Component {
 
   setCategories() {
     
-    this.props.onSubClick(false);
+    // this.props.onSubClick(false);
 
     if (this.state.count % 2 === 0) {
       this.setState({
@@ -43,15 +43,18 @@ class MeatballV4 extends Component {
       });
     }
     this.state.count++;
+          console.log('before: ', this.state.meatballPic);
+
     if (this.state.count >= 3) {
       let rando = Math.floor(
         Math.random() * Math.floor(this.state.meatballArr.length)
       );
       rando =
         this.state.meatballPic === this.state.meatballArr[rando]
-          ? Math.abs(this.state.meatballArr.length - 1 - rando)
+          ? Math.abs(this.state.meatballArr.length - 1 - rando -1)
           : rando;
       this.state.meatballPic = this.state.meatballPicArray[rando];
+      console.log('after: ', this.state.meatballPic);
     }
   }
 

@@ -39,7 +39,7 @@ class App extends Component {
     };
   }
 
-  clickHandler = val => {
+  clickHandler = (val) => {
     if (val) {
       this.setState({ meatballArr2: this.state.meatballArr2.shift() });
     }
@@ -67,7 +67,6 @@ class App extends Component {
         <div className="subtitle-container">
           <Meatballs
             meatballArr={this.state.meatballArr}
-            onSubClick={this.clickHandler}
           />
         </div>
         <div className="subtitle-contatiner">
@@ -79,13 +78,12 @@ class App extends Component {
         <div className="subtitle-contatiner">
           <Meatballv3
             meatballArr={this.state.items}
-            onSubClick={this.clickHandler}
           />
         </div>
         <div className="subtitle-contatiner">
           <Meatballv4
             meatballArr={this.state.items}
-            onSubClick={this.clickHandler}
+            
           />
         </div>
       </div>
