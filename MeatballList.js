@@ -9,6 +9,8 @@ class MeatballList extends Component {
     if(this.props.cats.type == 'svg') {
       this.props.onListClick(!this.state.meatballClick);
       this.setState({meatballClick: !this.state.meatballClick});
+    } else {
+      console.log(this.props.cats);
     }
   }
    
