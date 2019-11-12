@@ -43,7 +43,7 @@ class Meatballs extends Component {
 
     if(this.state.count >= 3) {
       let rando = (Math.floor(Math.random() * Math.floor(this.state.meatballArr.length)));
-      rando = this.state.meatballPic !== this.state.meatballArr[rando] ? Math.abs((this.state.meatballArr.length -1) - rando): rando;
+      rando = this.state.meatballPic === this.state.meatballArr[rando] ? Math.abs((this.state.meatballArr.length -1) - rando): rando;
       this.state.meatballPic = this.state.meatballPicArray[rando];
     }
   }
