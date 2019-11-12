@@ -11,6 +11,7 @@ class Meatballs extends Component {
           return item
         }
       }),
+      rowClass: '',
       meatballPicArray: [
         'https://www.geek.com/wp-content/uploads/2019/08/meatball-625x352.jpg',
         'https://www.antifoodie.com/wp-content/uploads/2013/11/best-fast-food-meatball-subs.jpg',
@@ -28,14 +29,15 @@ class Meatballs extends Component {
     this.props.onSubClick(false);
 
     if(val) {
-      this.setState({meatballArr: this.props.meatballArr});
+      this.setState({meatballArr: this.props.meatballArr, rowClass: 'expanded'}); 
     } else {
         this.setState({
           meatballArr: this.props.meatballArr.filter((item, index) => {
           if (index === 0 || index >= this.props.meatballArr.length - 2) {
             return item
           }
-        })
+        }), 
+        rowClass: ''
       });
     }
 
@@ -52,7 +54,7 @@ class Meatballs extends Component {
       <div>
         <h3 className='meatball-header'>Meatball Sub</h3>
         <div>
-          <nav className="breadcrumb-container">
+          <nav className={'breadcrumb-container ' + this.state.rowClass}>
             <ol className="breadcrumbs">
               {this.state.meatballArr.map((item, index) => 
                 <MeatballList cats={item} key={index} onListClick={this.setCategories}/>

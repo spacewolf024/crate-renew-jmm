@@ -22,41 +22,11 @@ h2 {
 }
 
 .breadcrumbs {
-  padding: 0 10px;
-}
-
-@media screen and (max-width: 769px){
- .breadcrumb-container {
-   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   font-size: 12px;
-   overflow: auto;
-   white-space: nowrap;
-   display: flex;
-   text-align: right;
-   flex-wrap: nowrap;
-   flex-direction: row-reverse;
-   margin: 0;
-   padding: 0;
- }
-}
-@media screen and (min-width: 769px){
- .breadcrumb-container {
-   float: left;
-   display: block;
-   font-size: 12px;
- }
-
- .breadcrumbs {
-   padding: 0 10px;
- }
-
- .meatball-header {
-    clear: both;
-    padding: 15px 0;
-  }
+  padding: 0 3px;
 }
 .subtitle-container {
- clear: both
+ clear: both;
+ padding-top: 10px;
 }
 
 .meatballs {
@@ -90,4 +60,40 @@ h2 {
 
 .sub-pic {
   width: 100%;
+}
+
+.breadcrumbs {
+  margin-top: 0;
+}
+
+.expanded {
+  flex-direction: row !important;
+}
+
+@media screen and (min-width: 769px){
+  
+ .breadcrumb-container {
+   float: left;
+   display: block;
+   font-size: 12px;
+ }
+ .meatball-header {
+    clear: both;
+    padding-top: 8px;
+  }
+}
+
+@media screen and (max-width: 769px){
+ .breadcrumb-container {
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 12px;
+   overflow: auto;
+   white-space: nowrap;
+   display: flex;
+   text-align: right;
+   flex-wrap: nowrap;
+   flex-direction: row-reverse;
+   margin: 0;
+   padding: 0;
+ }
 }
