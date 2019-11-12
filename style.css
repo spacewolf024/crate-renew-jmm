@@ -23,6 +23,7 @@ h2 {
 
 .breadcrumbs {
   padding: 0 3px;
+  -webkit-overflow-scrolling: touch;
 }
 .subtitle-container {
  clear: both;
@@ -54,7 +55,10 @@ h2 {
    flex-wrap: nowrap;
    flex-direction: row;
    margin: 0;
+   flex-grow: 1;
    padding: 0;
+   align-content: center;
+   -webkit-overflow-scrolling: touch;
  }
 
  .meatball-list::-webkit-scrollbar {

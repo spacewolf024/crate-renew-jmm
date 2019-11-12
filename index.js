@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Meatballs from './Meatballs';
-import Meatballv2 from './MeatballV2';
-import Meatballv3 from './MeatballV3';
+import Meatballs from './Meatballs/Meatballs';
+import Meatballv2 from './Meatballs/MeatballV2';
+import Meatballv3 from './Meatballs/MeatballV3';
 import SliderList from './SliderList';
 import './style.css';
 
@@ -13,7 +13,7 @@ class App extends Component {
    this.state = {
      items: ['Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware'],
      meatballArr: [<svg className="meatballs"><path d='M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'></path></svg>,
-    'Home >', 'Tabletop & Bar >','Serveware and some stuff and more >', 'Snacks & Condiment Serveware'],
+    'Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware'],
     meatballArr2: [<svg className="meatballs"><path d='M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'></path></svg>,
     'Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware']
    }

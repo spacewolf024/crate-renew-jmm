@@ -17,7 +17,6 @@ class MeatballV3 extends Component {
   }
 
   setCategories(val) {
-    this.props.onSubClick(true);
     if(val) {
       this.setState({meatballArr: this.props.meatballArr});
     } else {
