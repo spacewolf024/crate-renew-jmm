@@ -15,7 +15,7 @@ class App extends Component {
       items: [
         "Home >",
         "Tabletop & Bar >",
-        "Serveware >",
+        "Serveware & more & more & more stuff >",
         "Snacks & Condiment Serveware"
       ],
       meatballArr: [
@@ -50,7 +50,7 @@ class App extends Component {
       <div className="subtitle-container">
         <h2>Breadcrumb Workshop</h2>
         <hr />
-        <div className="header-container">
+        <div className="meatball-header">
           <h3>Slider</h3>
         </div>
         <div>

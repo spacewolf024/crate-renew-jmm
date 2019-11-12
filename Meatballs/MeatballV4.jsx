@@ -6,7 +6,7 @@ class MeatballV4 extends Component {
     this.setCategories = this.setCategories.bind(this);
     this.state = {
       meatballArr: args[0].meatballArr.filter((item, index) => {
-        if (index === 0 || index >= args[0].meatballArr.length - 2) {
+        if (index >= args[0].meatballArr.length - 2) {
           return item;
         }
       }),
@@ -23,11 +23,11 @@ class MeatballV4 extends Component {
     };
   }
 
-  setCategories(val) {
-    this.state.count++;
+  setCategories() {
+    
     this.props.onSubClick(false);
 
-    if (val) {
+    if (this.state.count % 2 === 0) {
       this.setState({
         meatballArr: this.props.meatballArr,
         rowClass: "expanded"
@@ -35,14 +35,14 @@ class MeatballV4 extends Component {
     } else {
       this.setState({
         meatballArr: this.props.meatballArr.filter((item, index) => {
-          if (index === 0 || index >= this.props.meatballArr.length - 2) {
+          if (index >= this.props.meatballArr.length - 2) {
             return item;
           }
         }),
         rowClass: ""
       });
     }
-
+    this.state.count++;
     if (this.state.count >= 3) {
       let rando = Math.floor(
         Math.random() * Math.floor(this.state.meatballArr.length)
@@ -58,10 +58,13 @@ class MeatballV4 extends Component {
   render() {
     return (
       <div>
-        <h3 className="meatball-header">Meatball Sub V1</h3>
+        <h3 className="meatball-header">Meatball Sub V4</h3>
         <div>
-          <nav className={"meatball-container " + this.state.rowClass}>
-            <ol className="meatball-list">
+          <nav className={"breadcrumb-container " + this.state.rowClass}>
+            <ol className="breadcrumbs">
+              <svg className="meatballs sticky-meat" onClick={this.setCategories}>
+                <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+              </svg>
               {this.state.meatballArr.map((item, index) => (
                 <MeatballList
                   cats={item}
