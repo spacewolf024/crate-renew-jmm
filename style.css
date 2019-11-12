@@ -17,9 +17,13 @@ body {
  text-transform: capitalize;
 }
 
-/* .items:after {
+.items:after {
   content: " >"
-} */
+} 
+
+.items:last-child:after {
+  content: '';
+}
 
 h2 {
  text-align: center;

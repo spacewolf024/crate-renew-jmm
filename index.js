@@ -13,27 +13,27 @@ class App extends Component {
     this.clickHandler = this.clickHandler.bind(this);
     this.state = {
       items: [
-        "Home >",
-        "Tabletop & Bar >",
-        "Serveware & more & more & more stuff >",
+        "Home",
+        "Tabletop & Bar",
+        "Serveware & more & more & more stuff",
         "Snacks & Condiment Serveware"
       ],
       meatballArr: [
         <svg className="meatballs">
           <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
         </svg>,
-        "Home >",
-        "Tabletop & Bar >",
-        "Serveware >",
+        "Home",
+        "Tabletop & Bar ",
+        "Serveware ",
         "Snacks & Condiment Serveware"
       ],
       meatballArr2: [
         <svg className="meatballs">
           <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
         </svg>,
-        "Home >",
-        "Tabletop & Bar >",
-        "Serveware >",
+        "Home",
+        "Tabletop & Bar",
+        "Serveware",
         "Snacks & Condiment Serveware"
       ]
     };
