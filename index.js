@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Meatballs from './Meatballs';
+import Meatballv2 from './MeatballV2';
 import SliderList from './SliderList';
 import './style.css';
 
 class App extends Component {
  constructor() {
    super();
+   this.clickHandler = this.clickHandler.bind(this);
    this.state = {
      items: ['Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware'],
      meatballArr: [<svg className="meatballs"><path d='M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'></path></svg>,
+    'Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware'],
+    meatballArr2: [<svg className="meatballs"><path d='M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'></path></svg>,
     'Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware']
    }
+}
+
+clickHandler = (val) => {
+  if (val) {
+    this.setState({meatballArr2: this.state.meatballArr2.shift()})
+  } 
 }
 
  render() {
@@ -34,10 +44,15 @@ class App extends Component {
            </div>
          </div>
          <div className='subtitle-container'>
-           <Meatballs meatballArr={this.state.meatballArr} />
+           <Meatballs meatballArr={this.state.meatballArr} onSubClick={this.clickHandler}/>
+         </div>
+         <div className='subtitle-contatiner'>
+          <Meatballv2 meatballArr={this.state.meatballArr2} onSubClick={this.clickHandler} />
          </div>
      </div>
    );
  }
 }
 render(<App />, document.getElementById('root'));
+
+//

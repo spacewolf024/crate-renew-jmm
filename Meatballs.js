@@ -10,12 +10,23 @@ class Meatballs extends Component {
         if (index === 0 || index >= args[0].meatballArr.length - 2) {
           return item
         }
-      })
-    }
+      }),
+      meatballPicArray: [
+        'https://www.geek.com/wp-content/uploads/2019/08/meatball-625x352.jpg',
+        'https://www.antifoodie.com/wp-content/uploads/2013/11/best-fast-food-meatball-subs.jpg',
+        'https://amindfullmom.com/wp-content/uploads/2019/01/Easy-Homemade-Meatball-Sub.jpg',
+        'https://www.tasteofhome.com/wp-content/uploads/2017/10/exps34411_TH967125D31B-1.jpg',
+        'https://www.cook2eatwell.com/wp-content/uploads/2018/05/Italian-Sausage-Meatball-Subs.jpg'
+      ],
+      count: 0,
+      meatballPic: ''
+    };
   }
 
   setCategories(val) {
-    console.log(val)
+    this.state.count++;
+    this.props.onSubClick(false);
+
     if(val) {
       this.setState({meatballArr: this.props.meatballArr});
     } else {
@@ -25,7 +36,13 @@ class Meatballs extends Component {
             return item
           }
         })
-      })
+      });
+    }
+
+    if(this.state.count >= 5) {
+      let rando = (Math.floor(Math.random() * Math.floor(this.state.meatballArr.length)));
+      rando = this.state.meatballPic ? (Math.floor(Math.random() * Math.floor(this.state.meatballArr.length))) : rando;
+      this.state.meatballPic = this.state.meatballPicArray[rando];
     }
   }
  
@@ -33,7 +50,7 @@ class Meatballs extends Component {
 
     return (
       <div>
-        <h3 className='meatball-header'>Meatballs</h3>
+        <h3 className='meatball-header'>Meatball Sub</h3>
         <div>
           <nav className="meatball-container">
             <ol className="meatball-list">
@@ -43,6 +60,7 @@ class Meatballs extends Component {
             </ol>
           </nav>
         </div>
+        <img className='sub-pic' src={this.state.meatballPic} />
       </div>
     )
  }

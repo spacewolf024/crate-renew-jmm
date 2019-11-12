@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 class SliderList extends Component {
-  constructor(...args){
-  }
 
   handleClick = () => {
     console.log(this.props.item);
@@ -15,6 +13,7 @@ class SliderList extends Component {
       </li>
     )
  }
-};
+
+}
 
 export default SliderList;

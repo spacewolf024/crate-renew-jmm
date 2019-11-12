@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 
 class MeatballList extends Component {
-  constructor(...args){
-
+  constructor(){
+    this.state ={ meatballClick: false };
   }
 
-  // .filter((item, index) => {
-      //   if (index === 0 || index >= this.props.cats.length - 2) {
-      //     return item
-      //   }
-      // })
-
   handleClick = () => {
-    console.log(this.props.cats);
     if(this.props.cats.type == 'svg') {
-      this.props.onListClick(true);
+      this.props.onListClick(!this.state.meatballClick);
+      this.setState({meatballClick: !this.state.meatballClick});
     }
   }
    
