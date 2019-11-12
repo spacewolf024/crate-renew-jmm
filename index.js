@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import Meatballs from "./Meatballs/Meatballs";
 import Meatballv2 from "./Meatballs/MeatballV2";
 import Meatballv3 from "./Meatballs/MeatballV3";
+import Meatballv4 from "./Meatballs/MeatballV4";
 import SliderList from "./SliderList";
 import "./style.css";
 
@@ -77,6 +78,12 @@ class App extends Component {
         </div>
         <div className="subtitle-contatiner">
           <Meatballv3
+            meatballArr={this.state.items}
+            onSubClick={this.clickHandler}
+          />
+        </div>
+        <div className="subtitle-contatiner">
+          <Meatballv4
             meatballArr={this.state.items}
             onSubClick={this.clickHandler}
           />
