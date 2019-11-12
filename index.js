@@ -12,7 +12,7 @@ class App extends Component {
    this.state = {
      items: ['Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware'],
      meatballArr: [<svg className="meatballs"><path d='M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'></path></svg>,
-    'Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware'],
+    'Home >', 'Tabletop & Bar >','Serveware and some stuff and more >', 'Snacks & Condiment Serveware'],
     meatballArr2: [<svg className="meatballs"><path d='M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'></path></svg>,
     'Home >', 'Tabletop & Bar >','Serveware >', 'Snacks & Condiment Serveware']
    }
@@ -32,7 +32,7 @@ clickHandler = (val) => {
          <div className='header-container'>
            <h3>Slider</h3>
          </div>
-         <div className="breadcrumb-container">
+         <div>
            <div>
              <nav className="breadcrumb-container">
                <ol className="breadcrumbs">

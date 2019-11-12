@@ -52,8 +52,8 @@ class Meatballs extends Component {
       <div>
         <h3 className='meatball-header'>Meatball Sub</h3>
         <div>
-          <nav className="meatball-container">
-            <ol className="meatball-list">
+          <nav className="breadcrumb-container">
+            <ol className="breadcrumbs">
               {this.state.meatballArr.map((item, index) => 
                 <MeatballList cats={item} key={index} onListClick={this.setCategories}/>
               )}
