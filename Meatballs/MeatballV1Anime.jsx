@@ -4,6 +4,7 @@ import MeatballListV2 from "./MeatballListV2";
 class MeatballV1Anime extends Component {
   constructor(...args) {
     this.setCategories = this.setCategories.bind(this);
+    this.meatballClick = this.meatballClick.bind(this);
     this.state = {
       meatballArr: args[0].meatballArr.filter((item, index) => {
         if (index >= args[0].meatballArr.length - 2) {
@@ -21,42 +22,33 @@ class MeatballV1Anime extends Component {
       count: 0,
       meatballPic: "",
       hidePicClass: 'hide',
-      animate: ''
+      animate: '',
+      toggle: false,
+      expanded: ''
 
     };
   }
 
-  setCategories(val) {
-    this.setState({animate: val ? 'animate-in' : 'animate-out'});
-    this.state.count++;
-    if (val) {
-      this.setState({
-        meatballArr: this.props.meatballArr,
-        rowClass: "expanded"
-      });
-    } else {
-      this.setState({
-        meatballArr: this.props.meatballArr.filter((item, index) => {
-          if (index >= this.props.meatballArr.length - 2) {
-            return item;
-          }
-        }),
-        rowClass: ""
-      });
-    }
+  meatballClick()  {
+    var val = !this.state.toggle;
+    
+    this.setState({
+      meatballArr: val ? this.props.meatballArr : this.props.meatballArr.filter((item, index) => {
+        if (index >= this.props.meatballArr.length - 2) {
+          return item;
+        }
+      })
+    });
+    
+    this.setState({
+      animate: !this.state.toggle ? 'animate-in' : 'animate-out',
+      toggle: !this.state.toggle,
+      expanded: val ? 'expanded' : ''
+    });
+  }
 
-    if (this.state.count >= 3) {
-      let rando = Math.floor(
-        Math.random() * Math.floor(this.state.meatballArr.length)
-      );
-      this.setState({hidePicClass: ''});
-      rando =
-        this.state.meatballPic === this.state.meatballArr[rando]
-          ? Math.abs(this.state.meatballArr.length - 1 - rando -1)
-          : rando;
-      
-      this.state.meatballPic = this.state.meatballPicArray[rando];
-    }
+  setCategories(val) {
+    
   }
 
   render() {
@@ -64,13 +56,13 @@ class MeatballV1Anime extends Component {
       <div>
         <h3 className="meatball-header">Meatball Sub V1</h3>
         <div>
-          <div>
+          <div className="meatball-animate" onClick={this.meatballClick}>
             <svg className="meatballs">
               <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
             </svg>
           </div>
-          <nav className={"meatball-container " + this.state.rowClass}>
-            <ol className={"meatball-list "+ this.state.animate }>
+          <nav className={"animate-container breadcrumb-container " + this.state.expanded}>
+            <ol className={"breadcrumbs " + this.state.animate }>
               {this.state.meatballArr.map((item, index) => (
                 <MeatballListV2
                   cats={item}

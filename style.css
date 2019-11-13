@@ -7,6 +7,7 @@ body {
 .breadcrumbs {
    list-style: none;
 }
+
 .breadcrumb-container::-webkit-scrollbar {
  width: 0;
  display: none;
@@ -30,7 +31,23 @@ h2 {
  text-align: center;
 }
 
+.animate-container {
+  float: right;
+  width: calc(100% - 35px);
+}
+
+.meatball-animate {
+  display: inline-block;
+}
+
 .animate-in {
+  animation-duration: .5s;
+  animation-name: animateIn;
+}
+
+.animate-out {
+  animation-duration: .5s;
+  animation-name: animateOut;
 }
 
 .animation-header {
@@ -139,4 +156,26 @@ h2 {
    margin: 0;
    padding: 0;
  }
+}
+
+@keyframes animateIn{
+  from{
+    margin-left: 50%;
+    left: 0;
+  }
+  to {
+    margin-left: 0;
+    left: 0;
+  }
+}
+
+@keyframes animateOut{
+  from{
+    margin-right: -50%;
+    left: 0;
+  }
+  to {
+    margin-right: 0;
+    left: 0;
+  }
 }
