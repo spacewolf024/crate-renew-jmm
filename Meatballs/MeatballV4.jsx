@@ -78,7 +78,6 @@ class MeatballV4 extends Component {
             </ol>
           </nav>
         </div>
-        <img className="sub-pic" src={this.state.meatballPic} />
       </div>
     );
   }

@@ -2,6 +2,7 @@ body {
  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  text-transform: capitalize;
  margin: 0 10px;
+ padding-bottom: 175px;
 }
 .breadcrumbs {
    list-style: none;
@@ -18,7 +19,7 @@ body {
 }
 
 .items:after {
-  content: " >"
+  content: " >";
 } 
 
 .items:last-child:after {
@@ -27,6 +28,13 @@ body {
 
 h2 {
  text-align: center;
+}
+
+.animate-in {
+}
+
+.animation-header {
+  text-align: center;
 }
 
 .hide {
@@ -81,6 +89,7 @@ h2 {
    padding: 0;
    align-items: baseline;
    -webkit-overflow-scrolling: touch;
+   transition: 1s;
  }
 
  .meatball-list::-webkit-scrollbar {

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import MeatballList from "./MeatballList";
+import MeatballListV2 from "./MeatballListV2";
 
-class Meatballs extends Component {
+class MeatballV1Anime extends Component {
   constructor(...args) {
     this.setCategories = this.setCategories.bind(this);
     this.state = {
       meatballArr: args[0].meatballArr.filter((item, index) => {
-        if (index === 0 || index >= args[0].meatballArr.length - 2) {
+        if (index >= args[0].meatballArr.length - 2) {
           return item;
         }
       }),
@@ -20,11 +20,14 @@ class Meatballs extends Component {
       ],
       count: 0,
       meatballPic: "",
-      hidePicClass: 'hide'
+      hidePicClass: 'hide',
+      animate: ''
+
     };
   }
 
   setCategories(val) {
+    this.setState({animate: val ? 'animate-in' : 'animate-out'});
     this.state.count++;
     if (val) {
       this.setState({
@@ -34,7 +37,7 @@ class Meatballs extends Component {
     } else {
       this.setState({
         meatballArr: this.props.meatballArr.filter((item, index) => {
-          if (index === 0 || index >= this.props.meatballArr.length - 2) {
+          if (index >= this.props.meatballArr.length - 2) {
             return item;
           }
         }),
@@ -61,10 +64,15 @@ class Meatballs extends Component {
       <div>
         <h3 className="meatball-header">Meatball Sub V1</h3>
         <div>
+          <div>
+            <svg className="meatballs">
+              <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+            </svg>
+          </div>
           <nav className={"meatball-container " + this.state.rowClass}>
-            <ol className="meatball-list">
+            <ol className={"meatball-list "+ this.state.animate }>
               {this.state.meatballArr.map((item, index) => (
-                <MeatballList
+                <MeatballListV2
                   cats={item}
                   key={index}
                   onListClick={this.setCategories}
@@ -78,4 +86,4 @@ class Meatballs extends Component {
   }
 }
 
-export default Meatballs;
+export default MeatballV1Anime;
