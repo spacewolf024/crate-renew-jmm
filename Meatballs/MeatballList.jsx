@@ -17,7 +17,7 @@ class MeatballList extends Component {
   render() {
     return (
       <li className="items" onClick={this.handleClick}>
-        {this.props.cats}
+        <a href="#">{this.props.cats}</a>
       </li>
     );
   }

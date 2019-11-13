@@ -5,6 +5,7 @@ import Meatballv2 from "./Meatballs/MeatballV2";
 import Meatballv3 from "./Meatballs/MeatballV3";
 import Meatballv4 from "./Meatballs/MeatballV4";
 import MeatballV1Anime from "./Meatballs/MeatballV1Anime";
+import MeatballV3Anime from "./Meatballs/MeatballV3Anime";
 import SliderList from "./SliderList";
 import "./style.css";
 
@@ -90,6 +91,11 @@ class App extends Component {
         <h3 className='animation-header'>Animations (W.I.P.)</h3>
         <div className="subtitle-container">
           <MeatballV1Anime
+            meatballArr={this.state.items}
+          />
+        </div>
+        <div className="subtitle-container">
+          <MeatballV3Anime
             meatballArr={this.state.items}
           />
         </div>

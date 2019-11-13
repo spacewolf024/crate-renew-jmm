@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class MeatballListV2 extends Component {
+class MeatballListV3 extends Component {
   constructor() {
     this.state = { meatballClick: false };
   }
@@ -12,11 +12,11 @@ class MeatballListV2 extends Component {
 
   render() {
     return (
-      <li className="items" onClick={this.handleClick}>
-        <a href="#">{this.props.cats}</a>
+      <li className="items-anime" onClick={this.handleClick}>
+       <a href="#">{this.props.cats}</a>
       </li>
     );
   }
 }
 
-export default MeatballListV2;
+export default MeatballListV3;
