@@ -30,10 +30,10 @@ class App extends Component {
         "Snacks & Condiment Serveware"
       ],
       meatballArr2: [
-        <svg className="meatballs">
+        "Home",
+         <svg className="meatballs">
           <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
         </svg>,
-        "Home",
         "Tabletop & Bar",
         "Serveware",
         "Snacks & Condiment Serveware"
@@ -96,7 +96,7 @@ class App extends Component {
         </div>
         <div className="subtitle-container">
           <MeatballV3Anime
-            meatballArr={this.state.items}
+            items={this.state.meatballArr2}
           />
         </div>
       </div>
@@ -104,5 +104,3 @@ class App extends Component {
   }
 }
 render(<App />, document.getElementById("root"));
-
-//

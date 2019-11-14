@@ -12,8 +12,8 @@ class MeatballListV3 extends Component {
 
   render() {
     return (
-      <li className="items-anime" onClick={this.handleClick}>
-       <a href="#">{this.props.cats}</a>
+      <li className="items" onClick={this.handleClick}>
+       <a>{this.props.cats}</a>
       </li>
     );
   }

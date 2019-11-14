@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MeatballList from "./MeatballList";
+import MeatballList from "./MeatballListV3";
 
 class MeatballV3 extends Component {
   constructor(...args) {

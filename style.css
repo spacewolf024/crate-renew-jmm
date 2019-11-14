@@ -209,3 +209,26 @@ h2 {
   }
 }
 
+.ani-items {
+    max-width: 0;
+    padding-right: 0;
+    transform: scaleX(0.01);
+    transition: all 0.2s ease-in-out;
+}
+
+.actived .ani-items {
+    padding-right: 5px;
+    max-width: 200px;
+    transform: scaleX(1);
+}
+
+.ani-items span {
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.actived .ani-items span {
+    opacity: 1;
+}
+
+
