@@ -135,8 +135,8 @@ constructor() {
           <div>
           <h3 class="meatball-header">Meatball v3</h3>
             <ol className={this.state.class}>
-                <li class="items">Home</li>
-                <li class={"items " + this.state.meatClass} onClick={this.click} >
+                <li className="items">Home</li>
+                <li className={"items " + this.state.meatClass} onClick={this.click} >
                     <svg class="meatballs">
                         <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                     </svg>
