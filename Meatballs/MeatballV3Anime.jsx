@@ -133,7 +133,7 @@ constructor() {
         const list = this.renderList();
         return (
           <div>
-          <h3 class="meatball-header">Animation</h3>
+          <h3 class="meatball-header">Meatball v3</h3>
             <ol className={this.state.class}>
                 <li class="items">Home</li>
                 <li class={"items " + this.state.meatClass} onClick={this.click} >
