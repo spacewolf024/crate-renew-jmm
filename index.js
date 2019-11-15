@@ -73,7 +73,7 @@ class App extends Component {
         </div>
         <div className="subtitle-container">
           <Meatballv2
-            meatballArr={this.state.meatballArr2}
+            meatballArr={this.state.meatballArr}
             onSubClick={this.clickHandler}
           />
         </div>

@@ -14,18 +14,15 @@ class MeatballV2 extends Component {
   }
 
   setCategories(val) {
-    this.props.onSubClick(true);
+    // this.props.onSubClick(true);
     if (val) {
-      this.setState({ meatballArr: this.props.meatballArr });
-    } else {
-      this.setState({
-        meatballArr: this.props.meatballArr.filter((item, index) => {
-          if (index === 0 || index >= this.props.meatballArr.length - 2) {
-            return item;
+      this.setState({ meatballArr: this.props.meatballArr.filter((item, index) => {
+          if(index !== 0) {
+            return item
           }
         })
       });
-    }
+    } 
   }
 
   render() {
