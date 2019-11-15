@@ -14,7 +14,6 @@ class MeatballV2 extends Component {
   }
 
   setCategories(val) {
-    // this.props.onSubClick(true);
     if (val) {
       this.setState({ meatballArr: this.props.meatballArr.filter((item, index) => {
           if(index !== 0) {
